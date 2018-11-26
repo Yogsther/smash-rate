@@ -2,4 +2,4 @@
 
 #### Website launching soon, stay tuned!
 
-All images will be updated once the game releases.
+[smash.livfor.it](http://smash.livfor.it)
