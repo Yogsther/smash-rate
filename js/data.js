@@ -427,7 +427,7 @@ const FIGHTERS = [{
     "displayName": {
         "ja_JP": "キャプテン・<br>ファルコン",
         "en_US": "CAPTAIN <br>FALCON",
-        "en_GB": "CAPTAIN <br>FALCON",
+        "en_GB": "CAPTAIN FALCON",
         "en_AU": "CAPTAIN <br>FALCON",
         "fr_FR": "CAPTAIN <br>FALCON",
         "fr_CA": "CAPITAINE <br>FALCON",
@@ -1115,7 +1115,7 @@ const FIGHTERS = [{
     "displayName": {
         "ja_JP": "Mr.ゲーム＆<br>ウォッチ",
         "en_US": "MR. GAME <br>& WATCH",
-        "en_GB": "MR. GAME <br>& WATCH",
+        "en_GB": "MR. GAME & WATCH",
         "en_AU": "MR. GAME <br>& WATCH",
         "fr_FR": "MR. GAME <br>& WATCH",
         "fr_CA": "MR. GAME <br>& WATCH",
@@ -1422,7 +1422,7 @@ const FIGHTERS = [{
     "displayName": {
         "ja_JP": "ポケモントレーナー",
         "en_US": "POKÉMON <br>TRAINER",
-        "en_GB": "POKÉMON <br>TRAINER",
+        "en_GB": "POKEMON TRAINER",
         "en_AU": "POKÉMON <br>TRAINER",
         "fr_FR": "DRESSEUR <br>DE POKÉMON",
         "fr_CA": "DRESSEUR <br>DE POKÉMON",
@@ -1458,17 +1458,26 @@ const FIGHTERS = [{
     "displayNameEn": "SQUIRTLE",
     "file": "pze",
     "series": "pokemon",
-    "color": "#ffc004"
+    "color": "#ffc004",
+    "displayName": {
+        "en_GB": "SQUIRTLE"
+    }
 },{
     "displayNameEn": "IVYSAUR",
     "file": "pfush",
     "series": "pokemon",
-    "color": "#ffc004"
+    "color": "#ffc004",
+    "displayName": {
+        "en_GB": "IVYSAUR"
+    }
 },{
     "displayNameEn": "CHARIZARD",
     "file": "pli",
     "series": "pokemon",
-    "color": "#ffc004"
+    "color": "#ffc004",
+    "displayName": {
+        "en_GB": "CHARIZARD"
+    }
 },
 {
     "id": "f037",

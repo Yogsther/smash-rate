@@ -4,11 +4,38 @@
 
 body {
     background: #0f0f0f;
+    margin: 0;
 }
 
 @font-face {
     font-family: "Smash";
     src: url("smash.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Smash-2";
+    src: url("smash_2.ttf") format("truetype");
+}
+
+#header{
+    height: 60px;
+    width: 100%;
+    background: rgb(34, 34, 34);  
+    color: white;  
+}
+
+#header > * {
+    font-family: Smash-2 !important;
+}
+
+#header-title{
+    color: white;
+    font-family: Smash-2;
+    font-size: 35px;
+    top: 10px;
+    left: 10px;
+    position: relative;
+    display: block;
 }
 
 
@@ -33,7 +60,7 @@ body {
     padding: 20px;
     background: #151518;
     margin: 0 auto;
-    margin-top: 45px;
+    margin-top: 20px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -44,17 +71,24 @@ body {
     color: white;
     text-shadow: 2px 2px black;
     font-size: 50px;
-    font-family: Smash;
+    font-family: Smash-2;
 }
 
 #character-inspect{
     margin-top: 15px;
-    background: rgb(66, 66, 66);
+    background: rgb(37, 37, 37);
     width: 90%;
     max-width: 937px;
     margin: 0 auto;
     padding: 20px;
+    border-top: 5px black solid;
     position: relative;
+}
+
+#stock-icon{
+    float: right;
+    position: relative;
+    bottom: 10px;
 }
 
 #character-inspect-shadow{
@@ -76,7 +110,7 @@ body {
 .fighter-selection {
     display: inline-block;
     position: relative;
-    background: rgb(83, 83, 83);
+    background: linear-gradient(135deg, rgba(51,8,8,1) 0%, #DD5C00 100%);
     overflow: hidden;
     cursor: pointer;
     transition: all .1s;

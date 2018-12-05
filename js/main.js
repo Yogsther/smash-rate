@@ -14,24 +14,27 @@ window.onresize = e => {
     summonFighters();
 };
 
-var color = [255, 0, 20]
-var colorGoingUp = true;
+var intervalIndex = 0;
 
 setInterval(() => {
     var rowIndex = 0;
     for(row of document.getElementsByClassName("row")){
         var x = 0;
         for(el of row.children){
-            var intensity = ((.5 / amountOfRows) * rowIndex) + ((.5/perRow) * x);
-            el.style.background = "rgba(" + (color[0]) + ", " + (color[1] + intensity*100) + ", " + (color[2]+ intensity*100) + ", " + (1-intensity) + ")";
+            var intensity = ((.5 / amountOfRows) * rowIndex) + ((.5/perRow) * x); // Gradient delay effect-distance, 0-1
+            
+            if(!isHover(el))el.children[0].style.background = "rgba(0, 0, 0, " + ((Math.sin(intervalIndex + intensity)/4)+.2) + ")";
+            
+            function isHover(e) {
+                return (e.parentElement.querySelector(':hover') === e);
+            }
+
             x++;
         }
         rowIndex++;
     }
-    if(colorGoingUp) color[1]+=10;
-        else color[1]-=10;
-    if(color[1] > 255 || color[1] < 1) colorGoingUp = !colorGoingUp;
-}, 500);
+    intervalIndex-=.03;
+}, 50);
 
 // Select screen loader
 function summonFighters() {
@@ -64,7 +67,6 @@ function summonFighters() {
 
             var fighterElement = document.createElement("div");
                 fighterElement.classList.toggle("fighter-selection");
-                fighterElement.style.background = "black";
                 fighterElement.id = "fighter_"+fighterIndex;
                 
             var fighterImage = new Image();
@@ -87,7 +89,8 @@ function preInspectCharacter(id){
     // When the user only hovers over a character - a mini preview / inspection
     id = id.substr(id.indexOf("_")+1);
     var fighter = FIGHTERS[id];
-    document.getElementById("character-inspect").style.background = fighter.color;
-    document.getElementById("name-insert").innerText = fighter.displayNameEn;
-
+    document.getElementsByClassName("fighter-selection-img")[id].style.background = fighter.color;
+    document.getElementById("character-inspect").style.borderTopColor = fighter.color;
+    document.getElementById("name-insert").innerText = fighter.displayName.en_GB;
+    document.getElementById("stock-icon").src = 'content/stock/chara_2_' + fighter.file + '_00.png';
 }
