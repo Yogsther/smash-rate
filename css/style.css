@@ -30,12 +30,12 @@ body {
 
 #header-title{
     color: white;
-    font-family: Smash-2;
+    font-family: Smash-2 !important;
     font-size: 35px;
     top: 10px;
     left: 10px;
     position: relative;
-    display: block;
+    display: inline-block;
 }
 
 
@@ -110,7 +110,7 @@ body {
 .fighter-selection {
     display: inline-block;
     position: relative;
-    background: linear-gradient(135deg, rgba(51,8,8,1) 0%, #DD5C00 100%);
+    background: linear-gradient(135deg, rgb(0, 0, 0) 0%, rgb(255, 255, 255) 100%);
     overflow: hidden;
     cursor: pointer;
     transition: all .1s;
@@ -137,4 +137,61 @@ body {
     position: relative;
     margin: 0 auto;
     margin-top: -4px;
+}
+
+/* Profile */
+
+#profile{
+    top: 30px;
+    background: rgb(37, 37, 37);
+    width: 90%;
+    max-width: 937px;
+    min-height: 150px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;   
+}
+
+/* Skin rating page */
+
+#skin-tables{
+    width: 65%;
+    height: 800px;
+    background: rgb(29, 29, 29);
+    margin-left: 2%;
+    margin-top: 2em;
+    display: inline-block;
+}
+
+#comments{
+    margin-top: 1.5em;
+    display: inline-block;
+    width: 25%;
+    position: relative;
+    height: 800px;
+    background: rgb(29, 29, 29);
+    margin-left: 2%;
+}
+
+.character-skin-card{
+    width: 15em;
+    height: 20em;
+    background: rgb(182, 182, 182);
+    display: inline-block;
+    margin: 1em;
+    position: relative;
+}
+
+
+.card-row{
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 69em;
+}
+
+.card-image{
+    position: relative;
+    width: 100%;
+    
 }

@@ -7,11 +7,33 @@ const CHAR_WIDTH = 92;
 var amountOfRows;
 var perRow;
 
+
+
+var currentScene = '';
+var scenes = [
+    {
+        content: '<div id="selection-screen"> <div id="wrapper"></div> </div> <div id="character-inspect"><span id="name-insert">MARIO</span> <img src="content/stock/chara_2_bayonetta_00.png" alt="Stock icon" id="stock-icon"> <div id="character-inspect-shadow"></div> </div> <div id="profile"></div>',
+        name: "main"
+    }
+]
+
+loadScene("main");
 summonFighters();
 preInspectCharacter("fighter_0");
 
+
+
+function loadScene(name){
+    for(scene of scenes){
+        if(scene.name == name){
+            document.getElementById("content").innerHTML = scene.content;
+            currentScene = name;
+        }
+    }
+}
+
 window.onresize = e => {
-    summonFighters();
+    if(currentScene == "main") summonFighters();
 };
 
 var intervalIndex = 0;
@@ -23,7 +45,7 @@ setInterval(() => {
         for(el of row.children){
             var intensity = ((.5 / amountOfRows) * rowIndex) + ((.5/perRow) * x); // Gradient delay effect-distance, 0-1
             
-            if(!isHover(el))el.children[0].style.background = "rgba(0, 0, 0, " + ((Math.sin(intervalIndex + intensity)/4)+.2) + ")";
+            if(!isHover(el))el.children[0].style.background = "rgba(0, 0, 0, " + ((Math.sin(intervalIndex + (intensity*6))/4)+.5) + ")";
             
             function isHover(e) {
                 return (e.parentElement.querySelector(':hover') === e);
@@ -33,7 +55,7 @@ setInterval(() => {
         }
         rowIndex++;
     }
-    intervalIndex-=.03;
+    intervalIndex-=.05;
 }, 50);
 
 // Select screen loader
@@ -93,4 +115,5 @@ function preInspectCharacter(id){
     document.getElementById("character-inspect").style.borderTopColor = fighter.color;
     document.getElementById("name-insert").innerText = fighter.displayName.en_GB;
     document.getElementById("stock-icon").src = 'content/stock/chara_2_' + fighter.file + '_00.png';
+    document.getElementById("rate-title").style.color = fighter.color;
 }
