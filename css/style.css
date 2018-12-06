@@ -155,11 +155,10 @@ body {
 /* Skin rating page */
 
 #skin-tables{
-    width: 65%;
+    max-width: 60%;
     height: 800px;
-    background: rgb(29, 29, 29);
     margin-left: 2%;
-    margin-top: 2em;
+    margin-top: 2em;    
     display: inline-block;
 }
 
@@ -176,10 +175,17 @@ body {
 .character-skin-card{
     width: 15em;
     height: 20em;
-    background: rgb(182, 182, 182);
+    background: rgb(29, 29, 29);
+    
     display: inline-block;
     margin: 1em;
     position: relative;
+    transition: all .1s;
+}
+
+.character-skin-card:hover{
+    transform: scale(1.05);
+    outline: 5px red solid;
 }
 
 
@@ -193,5 +199,77 @@ body {
 .card-image{
     position: relative;
     width: 100%;
-    
+    background: radial-gradient(ellipse at center, rgb(87, 87, 87) 0%,rgb(24, 24, 24) 100%);
+    border-bottom: solid 5px red;
+}
+
+.star {
+    top: -10px;
+    width: 2.5em;
+    display: inline-block   ;
+    cursor: pointer;
+    position: relative;
+    transition: all .1s;   
+}
+
+.star:active{
+    transform: scale(.97) !important;
+}
+
+.star path{
+    fill: rgb(66, 66, 66) !important;
+    transition: all .1s;
+}
+
+.star path:hover{
+    fill: red !important;
+}
+
+.star:hover{
+    transform: scale(1.08);
+}
+
+.stars{
+    top: .8em;
+    width: 14em;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+
+.info{
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    display: block;
+    top: -43px;
+    text-align: center;
+    position: relative;
+    display: block; 
+}
+
+.comment-button{
+    position: relative;
+    fill: rgb(66, 66, 66) !important;
+    display: inline-block;
+    top: 5px;
+    left: 5px;
+    transform: scale(.8);
+    transition: all .1s;
+    cursor: pointer;
+}
+
+.comment-button:hover{
+    transform: scale(0.9);
+}
+
+.comment-button:hover svg{
+    fill: white;
+}
+.comment-button:active svg{
+    transform: scale(.7);
+}
+
+.comment-svg{
+
 }

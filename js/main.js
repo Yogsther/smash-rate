@@ -14,13 +14,30 @@ var scenes = [
     {
         content: '<div id="selection-screen"> <div id="wrapper"></div> </div> <div id="character-inspect"><span id="name-insert">MARIO</span> <img src="content/stock/chara_2_bayonetta_00.png" alt="Stock icon" id="stock-icon"> <div id="character-inspect-shadow"></div> </div> <div id="profile"></div>',
         name: "main"
+    },{
+        content: '<div id="skin-tables"> </div>',
+        name: "cards"
     }
+    
 ]
 
-loadScene("main");
-summonFighters();
-preInspectCharacter("fighter_0");
+//loadScene("main");
+//summonFighters();
+//preInspectCharacter("fighter_0");
 
+loadScene("cards")
+summonCards(20);
+
+function summonCards(id){
+    var fighter = FIGHTERS[id];
+    document.getElementById("rate-title").style.color = fighter.color;
+    var allCardsString = "";
+    for(i = 0; i < 8; i++){
+        allCardsString += '<div class="character-skin-card"> <img src="content/default/chara_1_' + fighter.file + '_0' + i + '.png" class="card-image" style="border-bottom: 5px solid ' + fighter.color + ' !important;" alt="Card image"> <div class="stars"> <div class="star"><svg class="star" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 670 670"><linearGradient x1="0%" x2="0%" y1="0%" y2="100%" id="a"><stop offset="0%" stop-color="#fbc1d4"/><stop offset="100%" stop-color="#d99db0"/></linearGradient><path class="ptn" fill="url(#a)" d="M305.969 112.01c23.984-4.23 101.085 114.077 101.085 114.077s135.358-11.593 148.577 7.665S481.9 366.827 481.9 366.827s49.731 126.392 35.1 141.97-145.846-27.29-145.846-27.29-109.054 87.086-127.735 75.54c-18.655-11.55-15.591-145.423-15.591-145.423s-116.573-77.805-114.808-99.809S250 253.775 250 253.775s31.985-137.54 55.969-141.765z"/></svg> </div> <div class="star"><svg class="star" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 670 670"><linearGradient x1="0%" x2="0%" y1="0%" y2="100%" id="a"><stop offset="0%" stop-color="#fbc1d4"/><stop offset="100%" stop-color="#d99db0"/></linearGradient><path class="ptn" fill="url(#a)" d="M305.969 112.01c23.984-4.23 101.085 114.077 101.085 114.077s135.358-11.593 148.577 7.665S481.9 366.827 481.9 366.827s49.731 126.392 35.1 141.97-145.846-27.29-145.846-27.29-109.054 87.086-127.735 75.54c-18.655-11.55-15.591-145.423-15.591-145.423s-116.573-77.805-114.808-99.809S250 253.775 250 253.775s31.985-137.54 55.969-141.765z"/></svg> </div> <div class="star"><svg class="star" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 670 670"><linearGradient x1="0%" x2="0%" y1="0%" y2="100%" id="a"><stop offset="0%" stop-color="#fbc1d4"/><stop offset="100%" stop-color="#d99db0"/></linearGradient><path class="ptn" fill="url(#a)" d="M305.969 112.01c23.984-4.23 101.085 114.077 101.085 114.077s135.358-11.593 148.577 7.665S481.9 366.827 481.9 366.827s49.731 126.392 35.1 141.97-145.846-27.29-145.846-27.29-109.054 87.086-127.735 75.54c-18.655-11.55-15.591-145.423-15.591-145.423s-116.573-77.805-114.808-99.809S250 253.775 250 253.775s31.985-137.54 55.969-141.765z"/></svg> </div> <div class="star"><svg class="star" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 670 670"><linearGradient x1="0%" x2="0%" y1="0%" y2="100%" id="a"><stop offset="0%" stop-color="#fbc1d4"/><stop offset="100%" stop-color="#d99db0"/></linearGradient><path class="ptn" fill="url(#a)" d="M305.969 112.01c23.984-4.23 101.085 114.077 101.085 114.077s135.358-11.593 148.577 7.665S481.9 366.827 481.9 366.827s49.731 126.392 35.1 141.97-145.846-27.29-145.846-27.29-109.054 87.086-127.735 75.54c-18.655-11.55-15.591-145.423-15.591-145.423s-116.573-77.805-114.808-99.809S250 253.775 250 253.775s31.985-137.54 55.969-141.765z"/></svg> </div> <div class="star"><svg class="star" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 670 670"><linearGradient x1="0%" x2="0%" y1="0%" y2="100%" id="a"><stop offset="0%" stop-color="#fbc1d4"/><stop offset="100%" stop-color="#d99db0"/></linearGradient><path class="ptn" fill="url(#a)" d="M305.969 112.01c23.984-4.23 101.085 114.077 101.085 114.077s135.358-11.593 148.577 7.665S481.9 366.827 481.9 366.827s49.731 126.392 35.1 141.97-145.846-27.29-145.846-27.29-109.054 87.086-127.735 75.54c-18.655-11.55-15.591-145.423-15.591-145.423s-116.573-77.805-114.808-99.809S250 253.775 250 253.775s31.985-137.54 55.969-141.765z"/></svg> </div> <span class="info"><span title="Index">1</span> | <span title="Rating">3.5</span> <span style="color:grey">/ 5 | <div class="comment-button"><svg width="25" height="25" class="comment-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"> <g><path d="M728.7,273.8H271.3c-19.6,0-32.7,13.1-32.7,32.7c0,19.6,13.1,32.7,32.7,32.7h457.3c19.6,0,32.7-13.1,32.7-32.7C761.3,286.8,748.3,273.8,728.7,273.8z"/><path d="M728.7,437.1H271.3c-19.6,0-32.7,13.1-32.7,32.7c0,19.6,13.1,32.7,32.7,32.7h457.3c19.6,0,32.7-13.1,32.7-32.7C761.3,450.1,748.3,437.1,728.7,437.1z"/><path d="M892,12.4c3.3,0-784,0-784,0c-62.1,0-98,32.7-98,94.7v558.6c0,62.1,35.9,98,98,98h130.7v163.3c9.8,45.7,75.1,91.5,163.3,32.7l196-196h294c62.1,0,98-68.6,98-130.7V110.4C990,48.4,950.8,12.4,892,12.4z M924.7,633.1c0,42.5-26.1,65.3-68.6,65.3c3.3,0-290.7,0-290.7,0l-196,196c-42.5,42.5-65.3,0-65.3-32.7c0-68.6,0-163.3,0-163.3H140.7c-42.5,0-65.3-22.9-65.3-65.3v-490c0-42.5,22.9-65.3,65.3-65.3h718.7c42.5,0,65.3,22.9,65.3,65.3V633.1z"/></g> </svg></div></span></span> </div> </div>';
+    }
+
+    document.getElementById("skin-tables").innerHTML = allCardsString;
+}
 
 
 function loadScene(name){
