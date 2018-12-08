@@ -36,6 +36,8 @@ body {
     left: 10px;
     position: relative;
     display: inline-block;
+    cursor: pointer;
+    user-select: none;
 }
 
 
@@ -155,17 +157,20 @@ body {
 /* Skin rating page */
 
 #skin-tables{
-    max-width: 60%;
-    height: 800px;
+    width: 0px;
+    height: 88vh;
+    overflow: auto;
     margin-left: 2%;
-    margin-top: 2em;    
+    margin-top: 1.4em;    
     display: inline-block;
 }
 
 #comments{
-    margin-top: 1.5em;
+    visibility: hidden;
+    margin-top: 1.4em;
     display: inline-block;
     width: 25%;
+    height: 88vh;
     position: relative;
     height: 800px;
     background: rgb(29, 29, 29);
@@ -173,19 +178,18 @@ body {
 }
 
 .character-skin-card{
-    width: 15em;
-    height: 20em;
+    width: 240px;
+    height: 320px;
     background: rgb(29, 29, 29);
-    
     display: inline-block;
-    margin: 1em;
+    margin: 16px;
     position: relative;
     transition: all .1s;
 }
 
 .character-skin-card:hover{
     transform: scale(1.05);
-    outline: 5px red solid;
+    outline: 5px rgb(0, 0, 0) solid;
 }
 
 
@@ -200,7 +204,7 @@ body {
     position: relative;
     width: 100%;
     background: radial-gradient(ellipse at center, rgb(87, 87, 87) 0%,rgb(24, 24, 24) 100%);
-    border-bottom: solid 5px red;
+    border-bottom: solid 5px rgb(0, 0, 0);
 }
 
 .star {
@@ -217,12 +221,12 @@ body {
 }
 
 .star path{
-    fill: rgb(66, 66, 66) !important;
+    /* fill: rgb(66, 66, 66) !important; */
     transition: all .1s;
 }
 
 .star path:hover{
-    fill: red !important;
+    /*fill: red !important;*/
 }
 
 .star:hover{
@@ -231,7 +235,7 @@ body {
 
 .stars{
     top: .8em;
-    width: 14em;
+    width: 12.5em;
     margin: 0 auto;
     display: block;
     position: relative;
@@ -254,13 +258,13 @@ body {
     display: inline-block;
     top: 5px;
     left: 5px;
-    transform: scale(.8);
+    transform: scale(.7);
     transition: all .1s;
     cursor: pointer;
 }
 
 .comment-button:hover{
-    transform: scale(0.9);
+    transform: scale(0.8);
 }
 
 .comment-button:hover svg{
@@ -273,3 +277,23 @@ body {
 .comment-svg{
 
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000000; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(22, 22, 22); 
+    cursor: pointer;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(39, 39, 39); 
+  }
