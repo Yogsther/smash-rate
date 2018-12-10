@@ -19,9 +19,9 @@ var scenes = [{
 
 ]
 
-handleURL();
+processURL();
 
-function handleURL() {
+function processURL() {
     url = window.location.href;
     var args = url.substr(url.indexOf("?") + 1).split("&");
     for (a of args) {
@@ -36,11 +36,10 @@ function handleURL() {
         summonFighters();
         preInspectCharacter("fighter_0");
     }
-
 }
 
 window.onpopstate = e => {
-    handleURL();
+    processURL();
 }
 
 
@@ -78,7 +77,8 @@ function calculateCardRealEstate() {
     if (amountOfCardsThatFit < 1) amountOfCardsThatFit = 1;
     if (amountOfCardsThatFit > 4) amountOfCardsThatFit = 4;
 
-    document.getElementById("skin-tables").style.width = (amountOfCardsThatFit * (margins + cardWidth)) + (margins) + "px"
+    document.getElementById("skin-tables").style.width = (amountOfCardsThatFit * (margins + cardWidth)) + (margins) + "px";
+    //document.getElementById("comments").style.width =  window.innerWidth - document.getElementById("skin-tables").offsetWidth - 34 + "px"
 }
 
 
@@ -197,12 +197,12 @@ function summonFighters() {
 function inspect(id) {
     id = id.substr(id.indexOf("_") + 1);
     window.history.pushState("", "?", "/?id=" + id);
-    handleURL()
+    processURL()
 }
 
 function back() {
     window.history.pushState("", "?", "/");
-    handleURL()
+    processURL()
 }
 
 function preInspectCharacter(id) {

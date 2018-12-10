@@ -167,14 +167,11 @@ body {
 
 #comments{
     visibility: hidden;
-    margin-top: 1.4em;
     display: inline-block;
-    width: 25%;
+    min-width: 240px;
     height: 88vh;
     position: relative;
-    height: 800px;
     background: rgb(29, 29, 29);
-    margin-left: 2%;
 }
 
 .character-skin-card{
