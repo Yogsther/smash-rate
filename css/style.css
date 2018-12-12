@@ -24,7 +24,7 @@ body {
     color: white;  
 }
 
-#header > * {
+#header, #title-name-spot{
     font-family: Smash-2 !important;
 }
 
@@ -243,7 +243,7 @@ body {
     font-weight: 900;
     font-size: 20px;
     display: block;
-    top: -43px;
+    top: -23px;
     text-align: center;
     position: relative;
     display: block; 
